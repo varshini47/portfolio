@@ -1,0 +1,226 @@
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-details__desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.project-details__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.4rem 0;
+}
+
+.project-details__tags span {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.project-details__links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.project-details__links a,
+.project-details__live-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.project-details__links a:hover,
+.project-details__live-link:hover {
+  color: var(--accent);
+}
+
+.project-preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -25px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  padding: 0;
+  background: var(--bg-elevated);
+}
+
+.project-preview img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-preview:hover img {
+  transform: scale(1.04);
+}
+
+.project-preview__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 15, 0);
+  transition: background 0.25s ease;
+}
+
+.project-preview:hover .project-preview__overlay {
+  background: rgba(10, 10, 15, 0.55);
+}
+
+.project-preview__cta {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #0a0a0f;
+}
+
+.project-preview:hover .project-preview__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 8, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.project-modal {
+  width: 100%;
+  max-width: 1100px;
+  height: 85vh;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7);
+}
+
+.project-modal__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.project-modal__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.project-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.project-modal__actions a {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.project-modal__actions button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.project-modal__actions button:hover {
+  color: var(--text);
+  background: var(--border);
+}
+
+.project-modal iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .project-row {
+    grid-template-columns: 1fr;
+  }
+
+  .project-details {
+    order: 1;
+  }
+
+  .project-preview {
+    order: 2;
+  }
+
+  .project-modal-backdrop {
+    padding: 0;
+  }
+
+  .project-modal {
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
