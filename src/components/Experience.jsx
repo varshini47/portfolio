@@ -92,11 +92,13 @@ function Experience() {
                   <span className="timeline__period">{entry.period}</span>
                   <h3>{entry.role}</h3>
                   <span className="timeline__company">{entry.company}</span>
-                  <ul className="timeline__highlights">
-                    {entry.highlights.map((point, idx) => (
-                      <li key={idx}>{point}</li>
-                    ))}
-                  </ul>
+                  {entry.highlights.length > 0 && (
+                    <ul className="timeline__highlights">
+                      {entry.highlights.map((point, idx) => (
+                        <li key={idx}>{point}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </motion.div>
             );

@@ -73,9 +73,16 @@ export const projects = [
 // to show a real company logo in the timeline marker. Without it, initials are used.
 export const experience = [
   {
-    role: "Software Development Engineer - 1 (prev. SDE Intern)",
+    role: "Software Development Engineer - 1",
     company: "Flipkart",
-    period: "Jan 2026 – Present",
+    period: "Jul 2026 – Present",
+    logoUrl: "/logos/flipkart.png",
+    highlights: [],
+  },
+  {
+    role: "SDE Winter Intern",
+    company: "Flipkart",
+    period: "Jan 2026 – Jun 2026",
     logoUrl: "/logos/flipkart.png",
     highlights: [
       "Build cross-platform mobile features in React Native and TypeScript for Flipkart Minutes, a new standalone quick-commerce app currently in internal pre-launch testing, spanning Homepage, Product, Account, and Cart.",
